@@ -65,9 +65,9 @@ From the first discussions, my position was that we had to build from the founda
 | **Aug 2024** | Joined in the first cohort, contracted as AI Engineer. The company ran three projects, chosen by a company-wide vote on researched options. I was assigned to the loyalty platform. Early discussions on stack, platforms and approach. |
 | **Aug – Oct 2024** | First build. I mapped the first data model from the reference product and wrote the domain document. Teams worked in parallel without a shared plan. |
 | **Nov 2024** | First restructure. The model was redesigned around a generic card, and the transaction ledger and business–customer relationships came in. Agile sprints in Asana, teams by specialism, and iterative documentation on SharePoint followed. I recommended the developer who became backend lead. I was asked to take a leadership role too, and chose to stay hands-on. |
-| **Dec 2024 – Jan 2025** | Work continued between terms. MVP scope cut to stamp cards, with unused card types and duplicate entities removed. Many early contributors left over this period. |
+| **Dec 2024 – Jan 2025** | Work continued between terms. MVP scope cut to stamp cards, with unused card types and duplicate entities removed. Many early contributors left over this period including the leads. |
 | **Feb 2025** | Second term. New project owners were brought in to share coordination, though the arrangement never took hold. I pushed for the loyalty work to run as one cross-functional team, with everyone joining design meetings and test sessions, and it did. I asked to move to the AI team, and its lead wanted me, but I stayed on the loyalty platform because it depended on me. |
-| **Mar 2025** | The backend lead left. I took over the backend and led the bot-attack investigation. |
+| **Mar 2025** | Bot-attack investigation. |
 | **Mar – Apr 2025** | Recovered the frontend of the company's M&A valuation prototype. The technical programme director left, and day-to-day operations stalled without a handover. |
 | **Spring 2025** | The company decided to restart with a new team. Existing contributors, including long-standing ones, were offboarded, and the programme ended in May. |
 
@@ -254,12 +254,12 @@ The company started with three project teams. After one folded into the others a
 
 - **Frontend team:** the React/TypeScript web app, including the business dashboard, card template designer, QR scanning, and the customer wallet.
 - **DevOps team:** AWS, the staging environment on ECS, and the central CI/CD pipeline.
-- **AI team:** an "AI employee" assistant, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
+- **AI team:** an "AI employee" assistant which provided stock and investment advice, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
 - **M&A valuation prototype:** a new product idea that leadership prototyped with AI coding tools, aimed at European SMB owners, with LLM-based company analysis, document review and an advisory chat (DeepSeek). Its React frontend had been generated with AI tooling and left hardcoded and not rendering. I got it rendering and working so it could be demonstrated.
 
 ## 11. Outcome
 
-The loyalty platform was built, deployed, and publicly reachable, which is how it attracted the bot attack. Businesses were lined up and waiting for demos. The bot attack landed just as those demos were due, and the delay came at a time when the team was already thinning. The work of separate teams never came together into a product leadership was ready to show. Leadership turned to prototyping new product ideas directly with AI coding tools, and after a year without a launchable MVP, the company chose to restart with a new team.
+The loyalty platform was built, deployed, and publicly reachable, which is how it attracted the bot attack. Businesses were lined up and waiting for demos for ages, but internal coordination never caught up. The bot attack landed just as those demos were due, and the delay came at a time when the team was already thinning. The work of separate teams never came together into a product that leadership was ready to show. Leadership turned to prototyping new product ideas directly with AI coding tools, and after a year without a launchable MVP, the company chose to restart with a new team.
 
 What I took from it:
 
@@ -285,7 +285,7 @@ What I took from it:
 - **Teams organised by tech layer, for most of the programme.** Separate frontend, backend, AI and infrastructure teams worked more like departments in a large organisation than a startup. Simple requests could take days, and access to infrastructure had to be negotiated case by case.
 - **Tight central control.** The structure that followed the restructures was rigid and tightly controlled from the centre. It held things together, but it overstretched the people running it and wore down the people inside it. Bringing in project owners to share the load came too late to take hold.
 - **No dedicated testing or security.** Requests for a testing team and a security specialist weren't taken up. The final apps were tested by the UI team and leadership themselves.
-- **Turnover without handover.** Contributors left in waves. When key people went, including the backend lead and the technical programme director, their knowledge, accounts and tooling went with them.
+- **Turnover without handover.** Contributors left in waves. When key people went, including the leads and core of each team, their knowledge, accounts and tooling went with them.
 - **Work that never joined up.** The AI team's iterations never got a frontend. The loyalty platform's pieces never came together into a demo.
 
 ### What I'd do differently
@@ -294,7 +294,7 @@ What I took from it:
 
 In my next role, as a founding-team member at EsimTime, I took the lead: full ownership of the platform through its public launch, including preparing for the security incidents a public launch with paid ads would draw. EsimTime went on to rank in the top 5 on F6S.
 
-**Agree the domain model before writing code.** My own first data model had the same problem as the early build in a different form: it copied the whole of an existing product instead of the MVP. I now start from the smallest model that supports one real flow end to end, and grow from there.
+**Agree the domain model before writing code.** My own first data model had the same problem as the early build in a different form: it copied the whole of an existing product instead of the MVP. I now start from the core features that supports one real flow end to end, and grow from there, while still aiming to have the core architecture set up.
 
 **Model customer cards as rows.** Customer card instances lived inside one wallet document per customer. That was quick to build, but it made per-card queries harder, and updates to the document sat partly outside the database transactions around them.
 
