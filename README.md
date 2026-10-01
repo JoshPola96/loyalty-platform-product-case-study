@@ -64,10 +64,10 @@ From the first discussions, my position was that we had to build from the founda
 |---|---|
 | **Aug 2024** | Joined in the first cohort, contracted as AI Engineer. The company ran three projects, chosen by a company-wide vote on researched options. I was assigned to the loyalty platform. Early discussions on stack, platforms and approach. |
 | **Aug – Oct 2024** | First build. I mapped the first data model from the reference product and wrote the domain document. Teams worked in parallel without a shared plan. |
-| **Nov 2024** | First restructure. The model was redesigned around a generic card, and the transaction ledger and business–customer relationships came in. Agile sprints in Asana, teams by specialism, and iterative documentation on SharePoint followed. I recommended the developer who became backend lead. I was asked to take a leadership role too, and chose to stay hands-on. |
-| **Dec 2024 – Jan 2025** | Work continued between terms. MVP scope cut to stamp cards, with unused card types and duplicate entities removed. Many early contributors left over this period including the leads. |
-| **Feb 2025** | Second term. New project owners were brought in to share coordination, though the arrangement never took hold. I pushed for the loyalty work to run as one cross-functional team, with everyone joining design meetings and test sessions, and it did. I asked to move to the AI team, and its lead wanted me, but I stayed on the loyalty platform because it depended on me. |
-| **Mar 2025** | Bot-attack investigation. |
+| **Nov 2024** | First restructure. The model was redesigned around a generic card, and the transaction ledger and business–customer relationships came in. Agile sprints in Asana, teams by specialism, and iterative documentation on SharePoint followed. I recommended the developer who became backend lead. I was asked to take a leadership role too, and chose to stay hands-on. Towards the end of the term, I pushed for the loyalty work to run as one cross-functional team, with everyone joining design meetings and test sessions, and it did. |
+| **Dec 2024 – Jan 2025** | At the end of the first term, many early contributors left together, including the backend lead and other team leads. I took over the backend. MVP scope cut to stamp cards, with unused card types and duplicate entities removed. |
+| **Feb 2025** | Second term. New project owners were brought in to share coordination, though the arrangement never took hold. I asked to move to the AI team, and its lead wanted me, but I stayed on the loyalty platform because it depended on me. |
+| **Mar 2025** | I led the bot-attack investigation and hardened the API. |
 | **Mar – Apr 2025** | Recovered the frontend of the company's M&A valuation prototype. The technical programme director left, and day-to-day operations stalled without a handover. |
 | **Spring 2025** | The company decided to restart with a new team. Existing contributors, including long-standing ones, were offboarded, and the programme ended in May. |
 
@@ -236,7 +236,7 @@ The prototype wasn't merged. The product already had its own JWT authentication,
 
 ## 9. Handling a bot attack
 
-In March 2025, as the backend lead left and I took over the service, the platform came under automated attack just as we were getting ready to demo to waiting clients.
+In March 2025, with the backend now mine, the platform came under automated attack just as we were getting ready to demo to waiting clients.
 
 The MVP site had been made public, against my recommendation to keep it behind access controls until the demos, and its URL had spread beyond the intended audience. Automated scripts hammered the login endpoint and the sign-up and verification journey, overloading the service. The abuse had gone unnoticed for weeks before it was picked up. AWS suspended SMS sending on the account until the company submitted a detailed investigation report and remediation plan. The same period brought spam attempts against the company's domain and mail.
 
@@ -254,12 +254,12 @@ The company started with three project teams. After one folded into the others a
 
 - **Frontend team:** the React/TypeScript web app, including the business dashboard, card template designer, QR scanning, and the customer wallet.
 - **DevOps team:** AWS, the staging environment on ECS, and the central CI/CD pipeline.
-- **AI team:** an "AI employee" assistant which provided stock and investment advice, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
+- **AI team:** an "AI employee" assistant designed to give stock and investment insights, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
 - **M&A valuation prototype:** a new product idea that leadership prototyped with AI coding tools, aimed at European SMB owners, with LLM-based company analysis, document review and an advisory chat (DeepSeek). Its React frontend had been generated with AI tooling and left hardcoded and not rendering. I got it rendering and working so it could be demonstrated.
 
 ## 11. Outcome
 
-The loyalty platform was built, deployed, and publicly reachable, which is how it attracted the bot attack. Businesses were lined up and waiting for demos for ages, but internal coordination never caught up. The bot attack landed just as those demos were due, and the delay came at a time when the team was already thinning. The work of separate teams never came together into a product that leadership was ready to show. Leadership turned to prototyping new product ideas directly with AI coding tools, and after a year without a launchable MVP, the company chose to restart with a new team.
+The loyalty platform was built, deployed, and publicly reachable, which is how it attracted the bot attack. Businesses were lined up and waiting for demos for months. The bot attack landed just as those demos were due, and the delay came at a time when the team was already thinning. The work of separate teams never came together into a product leadership was ready to show. Leadership turned to prototyping new product ideas directly with AI coding tools, and after a year without a launchable MVP, the company chose to restart with a new team.
 
 What I took from it:
 
@@ -276,16 +276,16 @@ What I took from it:
 - **The people team.** The HR team of that period brought the organisation to life: running meetings, setting up the structure, and keeping a distributed team connected.
 - **The first restructure.** Agile sprints, documentation that grew with each iteration, and frontend–backend discussions of the "why" behind each feature produced the only stretch of steady progress towards an MVP.
 - **The scope cut.** Narrowing to stamp cards, on a generic model, gave the team something it could finish.
-- **Going cross-functional.** In the second term, the loyalty work ran as one team across frontend, backend and infrastructure, with shared design meetings and test sessions. Everyone got maximum exposure to the whole product, and it was the most joined-up the project ever was.
+- **Going cross-functional.** Towards the end of the first term, the loyalty work ran as one team across frontend, backend and infrastructure, with shared design meetings and test sessions. Everyone got maximum exposure to the whole product, and it was the most joined-up the project ever was.
 
 ### What held the product back
 
 - **No product leadership with domain knowledge.** The project's first lead was rarely available, and leadership passed through several hands before settling. The product definition fell to the early team, most of whom were early in their careers, with no one above them who knew loyalty products.
-- **Leadership that was stretched thin.** Leadership attention was split across several ventures. Promised changes to teams and direction often arrived late or not at all, and tension within management went unresolved.
+- **Leadership that was stretched thin.** Leadership attention was split across several ventures. Promised changes to teams and direction often arrived late or not at all, responses to the team's questions could take weeks, and tension within management went unresolved.
 - **Teams organised by tech layer, for most of the programme.** Separate frontend, backend, AI and infrastructure teams worked more like departments in a large organisation than a startup. Simple requests could take days, and access to infrastructure had to be negotiated case by case.
 - **Tight central control.** The structure that followed the restructures was rigid and tightly controlled from the centre. It held things together, but it overstretched the people running it and wore down the people inside it. Bringing in project owners to share the load came too late to take hold.
 - **No dedicated testing or security.** Requests for a testing team and a security specialist weren't taken up. The final apps were tested by the UI team and leadership themselves.
-- **Turnover without handover.** Contributors left in waves. When key people went, including the leads and core of each team, their knowledge, accounts and tooling went with them.
+- **Turnover without handover.** Contributors left in waves. When key people went, including the leads and the core of each team, their knowledge, accounts and tooling went with them.
 - **Work that never joined up.** The AI team's iterations never got a frontend. The loyalty platform's pieces never came together into a demo.
 
 ### What I'd do differently
@@ -294,11 +294,11 @@ What I took from it:
 
 In my next role, as a founding-team member at EsimTime, I took the lead: full ownership of the platform through its public launch, including preparing for the security incidents a public launch with paid ads would draw. EsimTime went on to rank in the top 5 on F6S.
 
-**Agree the domain model before writing code.** My own first data model had the same problem as the early build in a different form: it copied the whole of an existing product instead of the MVP. I now start from the core features that supports one real flow end to end, and grow from there, while still aiming to have the core architecture set up.
+**Agree the domain model before writing code.** My own first data model had the same problem as the early build in a different form: it copied the whole of an existing product instead of the MVP. I now start from the core features that support one real flow end to end, with the architecture set up to grow from there.
 
 **Model customer cards as rows.** Customer card instances lived inside one wallet document per customer. That was quick to build, but it made per-card queries harder, and updates to the document sat partly outside the database transactions around them.
 
-**Build security in from the start, and keep unlaunched products private.** Rate limiting, bot protection and monitoring were added after an incident. Testing and security need owners, not volunteers: a dedicated tester and a security specialist were requested and never hired. On a public platform they belong in the first release, and they need to be verified end to end, not just configured. Until launch, a pre-release product belongs behind access controls. I recommended that at the time, and I'd push harder for it now.
+**Build security in from the start, and keep unlaunched products private.** Rate limiting, bot protection and monitoring were added after an incident. On a public platform they belong in the first release, and they need to be verified end to end, not just configured. Testing and security also need owners, not volunteers: a dedicated tester and a security specialist were requested and never hired. Until launch, a pre-release product belongs behind access controls. I recommended that at the time, and I'd push harder for it now.
 
 **Organise around the product from day one.** I pushed the loyalty work into a cross-functional team, with shared design meetings and test sessions, and it worked. But it only arrived at the end of a series of Agile restructures. Next time I'd set it up from the start, with developers holding scoped, audited access to their own infrastructure and trusted to run their own work.
 
