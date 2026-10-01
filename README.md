@@ -254,7 +254,7 @@ The company started with three project teams. After one folded into the others a
 
 - **Frontend team:** the React/TypeScript web app, including the business dashboard, card template designer, QR scanning, and the customer wallet.
 - **DevOps team:** AWS, the staging environment on ECS, and the central CI/CD pipeline.
-- **AI team:** an "AI employee" assistant designed to give stock and investment insights, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
+- **AI team:** an "AI employee" assistant, iterated several times across two platforms. One version was a Django service with real-time WebSocket chat backed by Amazon Lex V2. No frontend was built for it, and it ended as a "coming soon" page.
 - **M&A valuation prototype:** a new product idea that leadership prototyped with AI coding tools, aimed at European SMB owners, with LLM-based company analysis, document review and an advisory chat (DeepSeek). Its React frontend had been generated with AI tooling and left hardcoded and not rendering. I got it rendering and working so it could be demonstrated.
 
 ## 11. Outcome
