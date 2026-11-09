@@ -238,7 +238,7 @@ The prototype wasn't merged. The product already had its own JWT authentication,
 
 In March 2025, with the backend now mine, the platform came under automated attack just as we were getting ready to demo to waiting clients.
 
-The MVP site had been made public, against my recommendation to keep it behind access controls until the demos, and its URL had spread beyond the intended audience. Automated scripts hammered the login endpoint and the sign-up and verification journey, overloading the service. The abuse had gone unnoticed for weeks before it was picked up. AWS suspended SMS sending on the account until the company submitted a detailed investigation report and remediation plan. The same period brought spam attempts against the company's domain and mail.
+The MVP site had been made public, against my recommendation to keep it behind access controls until the demos, and its URL had spread beyond the intended audience. Automated scripts hammered the login endpoint and the sign-up and verification journey, overloading the service. The abuse had gone unnoticed for weeks before it was picked up. AWS paused the account's email sending (Amazon SES) due to the bounce rate until the company submitted a detailed investigation report and remediation plan. The same period brought spam attempts against the company's domain and mail.
 
 | Step | What I did |
 |---|---|
